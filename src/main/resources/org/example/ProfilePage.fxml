@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" styleClass="profilebg" stylesheets="@application.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ProfileScreen">
+   <top>
+       <AnchorPane fx:id="bigAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                   minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="profilebg"
+                   BorderPane.alignment="CENTER">
+           <ScrollPane fx:id="adminSetting" fitToHeight="true" fitToWidth="true" layoutX="976.0" layoutY="86.0"
+                       prefHeight="405.0" prefWidth="289.0" styleClass="scrollPane">
+               <AnchorPane fx:id="leftScrollPane" minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="283.0"
+                           styleClass="scrollPaneLeftBG">
+                   <Label layoutX="99.0" layoutY="14.0" text="Admin Settings" textFill="WHITE"/>
+                   <Label layoutX="14.0" layoutY="47.0" text="Users:" textFill="WHITE"/>
+               </AnchorPane>
+           </ScrollPane>
+           <Pane layoutX="974.0" layoutY="496.0" prefHeight="210.0" prefWidth="292.0" styleClass="paneBox">
+               <Label layoutX="110.0" layoutY="15.0" styleClass="text" text="Profile Settings"/>
+               <Label layoutX="10.0" layoutY="40.0" styleClass="text" text="Change Username" underline="true"/>
+               <Label layoutX="10.0" layoutY="75.0" styleClass="text" text="Change Password" underline="true"/>
+               <Label layoutX="10.0" layoutY="110.0" styleClass="text" text="Confirm Password" underline="true"/>
+               <Button fx:id="changeUser" layoutX="217.0" layoutY="36.0" mnemonicParsing="false"
+                       onAction="#changeUserName" prefHeight="29.0" prefWidth="63.0" styleClass="buttons"
+                       text="Confirm"/>
+               <Button layoutX="177.0" layoutY="142.0" mnemonicParsing="false" onAction="#changePass" prefHeight="29.0"
+                       prefWidth="101.0" styleClass="buttons" text="Confirm"/>
+               <TextField fx:id="username" layoutX="123.0" layoutY="37.0" prefHeight="27.0" prefWidth="94.0"
+                          styleClass="textField"/>
+               <PasswordField fx:id="password" layoutX="123.0" layoutY="71.0" prefHeight="25.0" prefWidth="150.0"
+                              styleClass="textField"/>
+               <PasswordField fx:id="confirmPassword" layoutX="124.0" layoutY="106.0" styleClass="textField"/>
+               <Label fx:id="errorLabel" layoutX="10.0" layoutY="148.0" prefHeight="38.0" prefWidth="133.0"
+                      textFill="RED" wrapText="true"/>
+           </Pane>
+           <ScrollPane fx:id="scrollLeft" fitToWidth="true" layoutX="14.0" layoutY="86.0" prefHeight="627.0"
+                       prefWidth="401.0" styleClass="scrollPane">
+               <AnchorPane fx:id="rightScrollPane" minHeight="0.0" minWidth="0.0" prefHeight="617.0"
+                           prefWidth="391.0" styleClass="scrollPaneTopBG">
+                   <Label layoutX="147.0" layoutY="14.0" text="Your Timelines" textFill="WHITE">
+                       <font>
+                           <Font size="15.0"/>
+                       </font>
+                   </Label>
+                   <Label layoutX="14.0" layoutY="44.0" prefHeight="21.0" prefWidth="98.0" text="Timeline TItle:"
+                          textFill="WHITE">
+                       <font>
+                           <Font size="15.0"/>
+                       </font>
+                   </Label>
+               </AnchorPane>
+           </ScrollPane>
+           <HBox layoutX="14.0" layoutY="14.0" prefHeight="63.0" prefWidth="1248.0" styleClass="paneBox">
+               <AnchorPane prefHeight="55.0" prefWidth="1241.0">
+                   <Button fx:id="backBtn" layoutX="1182.0" layoutY="14.0" mnemonicParsing="false" onAction="#back"
+                           styleClass="buttons" text="Back"/>
+                   <Button fx:id="logOutBtn" layoutX="1105.0" layoutY="15.0" mnemonicParsing="false"
+                           onAction="#logOut" styleClass="buttons" text="Log out"/>
+                   <Label fx:id="helloLabel" layoutX="35.0" layoutY="13.0" prefHeight="32.0" prefWidth="392.0"
+                          text="Hello User" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                       <font>
+                           <Font size="15.0"/>
+                       </font>
+                   </Label>
+               </AnchorPane>
+           </HBox>
+       </AnchorPane>
+   </top>
+</BorderPane>

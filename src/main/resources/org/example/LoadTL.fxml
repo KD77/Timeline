@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--change controller with this code fx:controller="org.example.SecondaryController"-->
+
+<AnchorPane fx:id="special" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="724.0" prefWidth="1259.0" styleClass="profilebg" stylesheets="@application.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.LoadTimeLineScreen">
+    <stylesheets>
+        <URL value="@rating.css"/>
+    </stylesheets>
+    <ScrollPane layoutX="5.0" layoutY="14.0" prefHeight="704.0" prefWidth="1252.0" styleClass="scrollPane">
+        <AnchorPane fx:id="anchorPane" prefHeight="698.0" prefWidth="1243.0" styleClass="darkerScrollPaneTopBG">
+
+            <Slider fx:id="slider" layoutX="15.0" layoutY="332.0" prefHeight="14.4" prefWidth="1242.4"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="332.40000000000003">
+                <styleClass>
+                    <String fx:value="jfx-slider"/>
+                    <String fx:value="thumb"/>
+                </styleClass>
+            </Slider>
+            <BorderPane fx:id="loadBox" layoutX="528.0" layoutY="275.0" prefHeight="129.0" prefWidth="187.0"
+                        styleClass="paneBox">
+                <bottom>
+                    <AnchorPane prefHeight="118.0" prefWidth="179.0" BorderPane.alignment="CENTER">
+                        <Button layoutX="110.0" layoutY="76.0" mnemonicParsing="false" onAction="#goBack"
+                                styleClass="buttons" text="Back"/>
+                        <Button fx:id="load" layoutX="24.0" layoutY="76.0" mnemonicParsing="false"
+                                onAction="#loadTimeLine" prefWidth="46.0" styleClass="buttons" text="Load"/>
+                        <Label layoutX="8.0" layoutY="14.0" prefHeight="54.0" prefWidth="163.0" styleClass="text"
+                               text="Do you want to load this timeline?" textAlignment="CENTER" textOverrun="CLIP"
+                               wrapText="true">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                    </AnchorPane>
+                </bottom>
+            </BorderPane>
+        </AnchorPane>
+    </ScrollPane>
+    <Label fx:id="title" alignment="CENTER" layoutX="511.0" layoutY="30.0" prefHeight="38.0" prefWidth="222.0"
+           styleClass="paneBox" text="Timeline name" textAlignment="CENTER" textFill="#bcbcbc">
+        <font>
+          <Font name="System Bold" size="14.0"/>
+        </font>
+    </Label>
+    <BorderPane fx:id="loginBox" disable="true" layoutX="950.0" layoutY="386.0" opacity="0.0" prefHeight="200.0"
+                prefWidth="200.0" styleClass="paneBox" AnchorPane.rightAnchor="93.0">
+        <bottom>
+            <AnchorPane prefHeight="39.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+                <Button fx:id="cancel" layoutX="116.0" layoutY="7.0" mnemonicParsing="false" onAction="#cancel"
+                        styleClass="buttons" text="cancel"/>
+                <Button fx:id="login" layoutX="29.0" layoutY="7.0" mnemonicParsing="false" onAction="#login"
+                        styleClass="buttons" text="Log in"/>
+            </AnchorPane>
+        </bottom>
+        <center>
+            <AnchorPane prefHeight="154.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+                <TextField fx:id="username" layoutX="22.0" layoutY="71.0" promptText="Email" styleClass="textField"/>
+                <PasswordField fx:id="password" layoutX="23.0" layoutY="104.0" promptText="Password"
+                               styleClass="textField"/>
+                <Label layoutX="28.0" prefHeight="60.0" prefWidth="136.0" styleClass="text"
+                       text="You most log in to rate this timeline" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lblMessage" alignment="CENTER" layoutY="131.0" prefHeight="17.0" prefWidth="191.0"
+                       textAlignment="CENTER"/>
+            </AnchorPane>
+        </center>
+    </BorderPane>
+    <Label fx:id="displayStars" layoutX="950" layoutY="632.0" prefHeight="26.0" prefWidth="175.0"/>
+    <fx:define>
+        <Image fx:id="empty" url="@NO_STAR_FOR_BOTI.png"/>
+        <Image fx:id="clicked" url="@STAR_FOR_BOTI.png"/>
+    </fx:define>
+    <Button fx:id="star1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="950"
+            layoutY="632.0" mnemonicParsing="false" onAction="#Star1Action" onMouseMoved="#hoverOverStar1"
+            prefHeight="26.0" prefWidth="30.0" text="star1">
+        <graphic>
+            <ImageView fx:id="image1" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                <Image url="@NO_STAR_FOR_BOTI.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Button fx:id="star2" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="980"
+            layoutY="632.0" mnemonicParsing="false" onAction="#Star2Action" onMouseMoved="#hoverOverStar2"
+            prefHeight="26.0" prefWidth="30.0" text="star2">
+        <graphic>
+            <ImageView fx:id="image2" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                <Image url="@NO_STAR_FOR_BOTI.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Button fx:id="star3" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="1010"
+            layoutY="632.0" mnemonicParsing="false" onAction="#Star3Action" onMouseMoved="#hoverOverStar3"
+            prefHeight="26.0" prefWidth="30.0" text="star3">
+        <graphic>
+            <ImageView fx:id="image3" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                <Image url="@NO_STAR_FOR_BOTI.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Button fx:id="star4" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="1040"
+            layoutY="632.0" mnemonicParsing="false" onAction="#Star4Action" onMouseMoved="#hoverOverStar4"
+            prefHeight="26.0" prefWidth="30.0" text="star4">
+        <graphic>
+            <ImageView fx:id="image4" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                <Image url="@NO_STAR_FOR_BOTI.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Button fx:id="star5" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="1070"
+            layoutY="632.0" mnemonicParsing="false" onAction="#Star5Action" onMouseMoved="#hoverOverStar5"
+            prefHeight="26.0" prefWidth="30.0" text="star5">
+        <graphic>
+            <ImageView fx:id="image5" fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                <Image url="@NO_STAR_FOR_BOTI.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Button fx:id="back" layoutX="899.0" layoutY="632.0" mnemonicParsing="false" onAction="#goBack" prefHeight="34.0"
+            prefWidth="58.0" styleClass="buttons" text="Back" AnchorPane.rightAnchor="45.0"/>
+</AnchorPane>

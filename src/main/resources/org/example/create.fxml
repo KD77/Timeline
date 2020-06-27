@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--change controller with this code fx:controller="org.example.SecondaryController"-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="724.0"
+            prefWidth="1259.0" styleClass="profilebg" stylesheets="@application.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.CreateScreen">
+    <ScrollPane fitToHeight="true" layoutX="251.0" layoutY="14.0" prefHeight="704.0" prefWidth="1005.0"
+                styleClass="scrollPane">
+        <AnchorPane fx:id="anchorRight" prefHeight="686.0" prefWidth="999.0"
+                    styleClass="darkerScrollPaneLeftBG">
+            <Slider fx:id="slider" disable="true" layoutX="15.0" layoutY="332.0" prefHeight="14.0"
+                    prefWidth="981.0" showTickLabels="true" showTickMarks="true" AnchorPane.topAnchor="332.0">
+                <styleClass>
+                    <String fx:value="jfx-slider"/>
+                    <String fx:value="thumb"/>
+                </styleClass>
+                <padding>
+                    <Insets left="15.0" right="15.0"/>
+                </padding>
+            </Slider>
+            <BorderPane fx:id="loginBox" disable="true" layoutX="717.0" layoutY="421.0" opacity="0.0"
+                        prefHeight="189.0" prefWidth="200.0" styleClass="paneBox">
+                <bottom>
+                    <AnchorPane prefHeight="39.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+                        <Button fx:id="cancel" layoutX="124.0" layoutY="7.0" mnemonicParsing="false"
+                                onAction="#cancel" styleClass="buttons" text="cancel"/>
+                        <Button fx:id="login" layoutX="26.0" layoutY="7.0" mnemonicParsing="false"
+                                onAction="#login" styleClass="buttons" text="Log in"/>
+                    </AnchorPane>
+                </bottom>
+                <center>
+                    <AnchorPane prefHeight="128.0" prefWidth="192.0" BorderPane.alignment="CENTER">
+                        <TextField fx:id="username" layoutX="21.0" layoutY="67.0" promptText="Email"
+                                   styleClass="textField"/>
+                        <PasswordField fx:id="password" layoutX="20.0" layoutY="101.0" promptText="Password"
+                                       styleClass="textField"/>
+                        <Label layoutX="28.0" layoutY="7.0" prefHeight="60.0" prefWidth="136.0"
+                               styleClass="text" text="Log in to save the timeline" textAlignment="CENTER"
+                               wrapText="true">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="lblMessage" alignment="CENTER" layoutY="131.0" prefHeight="17.0"
+                               prefWidth="191.0" textAlignment="CENTER"/>
+                    </AnchorPane>
+                </center>
+            </BorderPane>
+            <Button layoutX="895.0" layoutY="640.0" mnemonicParsing="false" onAction="#switchToPrimary"
+                    prefHeight="34.0" prefWidth="58.0" styleClass="buttons" text="Back"
+                    AnchorPane.rightAnchor="46.0"/>
+            <Button layoutX="779.0" layoutY="641.0" mnemonicParsing="false" onAction="#saveTL" prefHeight="33.0"
+                    prefWidth="102.0" styleClass="buttons" text="Save timeline" AnchorPane.rightAnchor="118.0"/>
+            <TextField fx:id="keyWords" layoutX="51.0" layoutY="644.0" promptText="enter keywords"
+                       styleClass="textField"/>
+            <TextField fx:id="pointValue" layoutX="37.0" layoutY="70.0" onKeyTyped="#numCap" prefHeight="27.0"
+                       prefWidth="166.0" promptText="Specify a value" styleClass="textField"/>
+            <TextField fx:id="startRange" layoutX="37.0" layoutY="32.0" onKeyTyped="#numCap" prefHeight="27.0"
+                       prefWidth="75.0" promptText="Start" styleClass="textField"/>
+            <TextField fx:id="endRange" layoutX="127.0" layoutY="32.0" onKeyTyped="#numCap" prefHeight="27.0"
+                       prefWidth="75.0" promptText="End" styleClass="textField"/>
+            <Button fx:id="confirm" layoutX="223.0" layoutY="31.0" mnemonicParsing="false" onAction="#update"
+                    styleClass="buttons" text="Confirm"/>
+            <Button fx:id="confirmPoint" layoutX="223.0" layoutY="69.0" mnemonicParsing="false"
+                    onAction="#value" styleClass="buttons" text="Confirm"/>
+            <Label fx:id="value" layoutX="23.0" layoutY="309.0" opacity="0.0" prefHeight="20.0" prefWidth="28.0"
+                   styleClass="textField"/>
+        </AnchorPane>
+    </ScrollPane>
+    <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="7.0" layoutY="70.0"
+                prefHeight="648.0" prefWidth="240.0" styleClass="scrollPane">
+        <AnchorPane fx:id="anchorPane" prefHeight="652.0" prefWidth="221.0" styleClass="darkerScrollPaneLeftBG">
+            <TextField fx:id="enternode" layoutX="14.0" layoutY="14.0" onKeyTyped="#textCap" prefHeight="26.0"
+                       prefWidth="183.0" promptText="Title" styleClass="textField"/>
+            <TextField fx:id="desc" alignment="TOP_LEFT" layoutX="14.0" layoutY="45.0" onKeyTyped="#textCap"
+                       prefHeight="83.0" prefWidth="183.0" promptText="Description" styleClass="textFieldDesc"/>
+            <Button layoutX="151.0" layoutY="140.0" mnemonicParsing="false" onAction="#plusBt" prefHeight="50.0"
+                    prefWidth="0" style="-fx-background-color: #252525;" styleClass="scrollPaneTopBG">
+                <graphic>
+                    <ImageView fitHeight="42.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@plus.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+        </AnchorPane>
+    </ScrollPane>
+    <TextField fx:id="title" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="222.0"
+               promptText="Timeline name" styleClass="paneBox">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+    </TextField>
+</AnchorPane>

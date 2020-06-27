@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="profilebg" stylesheets="@application.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SearchScreen">
+   <center>
+       <HBox prefHeight="110.0" prefWidth="1037.0" styleClass="searchBox" BorderPane.alignment="CENTER">
+           <Region prefHeight="147.0" prefWidth="67.0"/>
+           <Button mnemonicParsing="false" onAction="#switchToMain" prefHeight="67.0" prefWidth="82.0"
+                   styleClass="buttons" stylesheets="@application.css" text="Back">
+              <HBox.margin>
+                  <Insets left="20.0" top="40.0"/>
+              </HBox.margin>
+              <font>
+                  <Font size="18.0"/>
+              </font>
+           </Button>
+           <Region prefHeight="147.0" prefWidth="218.0"/>
+           <TextField fx:id="SearchBar" onAction="#SearchButtonReleased" prefHeight="67.0" prefWidth="504.0"
+                      promptText="Search text...." styleClass="searchBar" stylesheets="@application.css">
+              <HBox.margin>
+                  <Insets top="40.0"/>
+              </HBox.margin>
+              <font>
+                  <Font size="28.0"/>
+              </font>
+           </TextField>
+           <Region prefHeight="147.0" prefWidth="33.0"/>
+           <Button mnemonicParsing="false" onAction="#SearchButtonReleased" prefHeight="67.0" prefWidth="86.0"
+                   styleClass="buttons" stylesheets="@application.css" text="Search">
+              <HBox.margin>
+                  <Insets left="10.0" top="40.0"/>
+              </HBox.margin>
+              <font>
+                  <Font size="19.0"/>
+              </font>
+           </Button>
+       </HBox>
+   </center>
+   <bottom>
+       <VBox fx:id="vbox" prefHeight="573.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+           <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="572.0" prefWidth="1280.0"
+                       styleClass="searchBox" stylesheets="@application.css">
+               <AnchorPane fx:id="anchorPane" prefHeight="562.0" prefWidth="1270.0" styleClass="profilebg"
+                           stylesheets="@application.css"/>
+           </ScrollPane>
+       </VBox>
+   </bottom>
+</BorderPane>
